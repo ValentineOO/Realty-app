@@ -3,6 +3,7 @@ const router = express.Router();
 import {
   createResidency,
   getAllResidencies,
+  getResidency,
 } from "../controllers/residencyController.js";
 
 router.post("/create", createResidency);
