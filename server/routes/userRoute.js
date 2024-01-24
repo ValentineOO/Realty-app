@@ -4,6 +4,7 @@ import {
   cancelBooking,
   createUser,
   getAllBookings,
+  getAllFavorites,
   toFav,
 } from "../controllers/userController.js";
 
@@ -14,5 +15,6 @@ router.post("/bookVisit/:id", bookVisit);
 router.post("/allBookings", getAllBookings);
 router.post("/removeBooking/:id", cancelBooking);
 router.post("/toFav/:rid", toFav);
+router.post("/allFav/", getAllFavorites);
 
 export { router as userRoute };
