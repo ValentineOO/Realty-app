@@ -1,6 +1,7 @@
 import React from "react";
 import "./Hero.css";
 import CountUp from "react-countup";
+import SearchBar from "../SearchBar/SearchBar";
 import { motion } from "framer-motion";
 
 const Hero = () => {
@@ -31,7 +32,7 @@ const Hero = () => {
               Forget all difficulties in finding a residence for you
             </span>
           </div>
-          
+
           <SearchBar />
 
           <div className="flexCenter stats">

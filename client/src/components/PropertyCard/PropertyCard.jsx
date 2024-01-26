@@ -1,9 +1,11 @@
 import React from "react";
+import { AiFillHeart } from "react-icons/ai";
 import "./PropertyCard.css";
 
 const PropertyCard = ({ card }) => {
   return (
     <div className="flexColStart r-card">
+      <AiFillHeart size={24} />
       <img src={card.image} alt="home" />
       <span className="secondaryText r-price">
         <span style={{ color: "orange" }}>$</span>
