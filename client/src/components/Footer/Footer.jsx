@@ -2,23 +2,20 @@ import React from "react";
 import "./Footer.css";
 const Footer = () => {
   return (
-    <section className="f-wrapper">
+    <div className="f-wrapper">
       <div className="paddings innerWidth flexCenter f-container">
+        {/* left side */}
         <div className="flexColStart f-left">
           <img src="./logo2.png" alt="" width={120} />
           <span className="secondaryText">
-            Out vision is to make all people
-            <br />
+            Our vision is to make all people <br />
             the best place to live for them.
           </span>
         </div>
 
         <div className="flexColStart f-right">
-          <div className="primaryText">Information</div>
-          <span className="secondaryText">
-            43 Willow Court Mechanicsville, VA 23111
-          </span>
-
+          <span className="primaryText">Information</span>
+          <span className="secondaryText">145 New York, FL 5467, USA</span>
           <div className="flexCenter f-menu">
             <span>Property</span>
             <span>Services</span>
@@ -27,7 +24,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 
