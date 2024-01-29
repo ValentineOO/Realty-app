@@ -1,7 +1,8 @@
-import React from "react";
 import { useQuery } from "react-query";
+import { getAllProperties } from "../utils/api";
 
 const useProperties = () => {
+  // console.log(data);
   const { data, isLoading, isError, refetch } = useQuery(
     "allProperties",
     getAllProperties,
@@ -11,3 +12,4 @@ const useProperties = () => {
 };
 
 export default useProperties;
+

@@ -1,5 +1,5 @@
 import express from "express";
-import dotenv, { configDotenv } from "dotenv";
+import dotenv from "dotenv";
 import cookieParser from "cookie-parser";
 import cors from "cors";
 import { userRoute } from "./routes/userRoute.js";
