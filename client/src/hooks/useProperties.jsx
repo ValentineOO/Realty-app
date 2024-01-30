@@ -12,4 +12,3 @@ const useProperties = () => {
 };
 
 export default useProperties;
-
