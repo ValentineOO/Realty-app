@@ -4,6 +4,7 @@ import { useLocation } from "react-router-dom";
 import { getProperty } from "../../utils/api";
 import { PuffLoader } from "react-spinners";
 import { AiFillHeart } from "react-icons/ai";
+import "./Property.css";
 
 const Property = () => {
   const { pathname } = useLocation();
@@ -44,6 +45,24 @@ const Property = () => {
         {/* image */}
 
         <img src={data?.image} alt="home image" />
+
+        <div className="flexCenter property-details">
+          {/* left */}
+
+          <div className="flexColStart left">
+            {/* head */}
+            <div className="flexStart head">
+              <span className="primaryText">{data?.title}</span>
+              <span className="orangeText" style={{ fontSize: "1.5rem" }}>
+                $ {data?.price}
+              </span>
+            </div>
+          </div>
+
+          {/* right side */}
+
+          <div className="right">this is the right side</div>
+        </div>
       </div>
     </div>
   );
