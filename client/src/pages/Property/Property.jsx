@@ -5,6 +5,9 @@ import { getProperty } from "../../utils/api";
 import { PuffLoader } from "react-spinners";
 import { AiFillHeart } from "react-icons/ai";
 import "./Property.css";
+import { FaShower } from "react-icons/fa";
+import { AiTwotoneCar } from "react-icons/ai";
+import { MdMeetingRoom } from "react-icons/md";
 
 const Property = () => {
   const { pathname } = useLocation();
@@ -56,6 +59,25 @@ const Property = () => {
               <span className="orangeText" style={{ fontSize: "1.5rem" }}>
                 $ {data?.price}
               </span>
+            </div>
+
+            {/* facilities */}
+            <div className="flexStart facilities">
+              {/* Bathroom */}
+              <div className="flexStart facility">
+                <FaShower size={20} color="#1F3E72" />
+                <span>{data?.facilities?.bathrooms} Bathrooms</span>
+              </div>
+              {/* parkings */}
+              <div className="flexStart facility">
+                <AiTwotoneCar size={20} color="#1F3E72" />
+                <span>{data?.facilities.parkings} Parking</span>
+              </div>
+              {/* rooms */}
+              <div className="flexStart facility">
+                <MdMeetingRoom size={20} color="#1F3E72" />
+                <span>{data?.facilities.rooms} Rooms</span>
+              </div>
             </div>
           </div>
 
