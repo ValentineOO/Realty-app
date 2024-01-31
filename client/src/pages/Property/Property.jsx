@@ -94,6 +94,9 @@ const Property = () => {
                 {data?.country}
               </span>
             </div>
+
+            {/* booking button */}
+            <button className="button">Book your visit</button>
           </div>
 
           {/* right side */}
