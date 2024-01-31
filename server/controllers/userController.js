@@ -132,7 +132,7 @@ export const getAllFavorites = asyncHandler(async (req, res) => {
       where: { email },
       select: { favResidenciesID: true },
     });
-    res.status(200).send(favResd)
+    res.status(200).send(favResd);
   } catch (err) {
     throw new Error(err.message);
   }
