@@ -1,20 +1,23 @@
-import React from "react";
-import { MantineProvider, Modal } from "@mantine/core";
-
+import React, { useState } from "react";
+import { Button, Modal } from "@mantine/core";
+import { DatePicker } from "@mantine/dates";
 const BookingModal = ({ opened, setOpened, email, propertyId }) => {
+  const [value, setValue] = useState(null);
+
   return (
-    <MantineProvider>
-      <Modal
-        opened={opened}
-        setOpened={setOpened}
-        title="Select your date of visit"
-        centered
-      >
-        <div>
-          <span>This is a booking modal</span>
-        </div>
-      </Modal>
-    </MantineProvider>
+    <Modal
+      opened={opened}
+      onClose={() => {
+        setOpened(false);
+      }}
+      title="Select your date of visit"
+      centered
+    >
+      <div className="flexColCenter">
+        <DatePicker value={value} onChange={setValue} minDate={new Date()} />
+        <Button>Book your visit</Button>
+      </div>
+    </Modal>
   );
 };
 
