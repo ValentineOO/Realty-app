@@ -15,6 +15,7 @@ import { useAuth0 } from "@auth0/auth0-react";
 import BookingModal from "../../components/BookingModal/BookingModal";
 import UserDetailContext from "../../context/userDetailContext";
 import { toast } from "react-toastify";
+import Heart from "../../components/Heart/Heart";
 
 const Property = () => {
   const { pathname } = useLocation();
@@ -71,7 +72,7 @@ const Property = () => {
       <div className="flexColStart paddings innerWidth property-container">
         {/* like button */}
         <div className="like">
-          <AiFillHeart size={24} color="white" />
+          <Heart id={id} />
         </div>
         {/* image */}
 
