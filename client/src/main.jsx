@@ -13,7 +13,8 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       domain={domain}
       clientId={clientId}
       authorizationParams={{
-        redirect_uri: "http://localhost:5173",
+      // redirect_uri:window.location.origin
+      redirect_uri: "http://localhost:5173",
       }}
       audience="http://localhost:8000"
       scope="openid profile email"

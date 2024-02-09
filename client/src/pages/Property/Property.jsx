@@ -112,9 +112,15 @@ const Property = () => {
 
             {/* booking button */}
             {bookings?.map((booking) => booking.id).includes(id) ? (
-              <Button variant="outline" w="100%" color="red">
-                <span>Cancel booking</span>
-              </Button>
+              <>
+                <Button variant="outline" w="100%" color="red">
+                  <span>Cancel booking</span>
+                </Button>
+                <span>
+                  Your visit has been booked for{" "}
+                  {bookings?.filter((booking) => booking?.id === id)[0].date}
+                </span>
+              </>
             ) : (
               <button
                 className="button"
