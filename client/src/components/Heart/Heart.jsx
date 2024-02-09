@@ -1,11 +1,11 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { AiFillHeart } from "react-icons/ai";
 import useAuthCheck from "../../hooks/useAuthCheck";
 import { useMutation } from "react-query";
 import { useAuth0 } from "@auth0/auth0-react";
 import UserDetailContext from "../../context/userDetailContext";
 import { toFav } from "../../utils/api";
-import { updateFavorites } from "../../utils/common";
+import { checkFavorites, updateFavorites } from "../../utils/common";
 
 const Heart = ({ id }) => {
   const [heartColor, setHeartColor] = useState("white");
@@ -16,6 +16,10 @@ const Heart = ({ id }) => {
     userDetails: { favorites, token },
     setUserDetails,
   } = useContext(UserDetailContext);
+
+  useEffect(() => {
+    setHeartColor(() => checkFavorites(id, favorites));
+  }, [favorites]);
 
   const { mutate } = useMutation({
     mutationFn: () => toFav(id, user?.email, token),
