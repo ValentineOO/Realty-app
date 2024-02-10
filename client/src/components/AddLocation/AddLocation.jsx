@@ -3,6 +3,7 @@ import { useForm } from "@mantine/form";
 import { Select, TextInput } from "@mantine/core";
 import { validateString } from "../../utils/common";
 import useCountries from "../../hooks/useCountries";
+import Map from "../Map/Map";
 
 const AddLocation = ({ propertyDetails, setPropertyDetails }) => {
   const { getAll } = useCountries();
@@ -24,10 +25,24 @@ const AddLocation = ({ propertyDetails, setPropertyDetails }) => {
   const { country, city, address } = form.values;
   return (
     <form>
-      {/* left side */}
-      <div className="flexCenter">
+      <div
+        className="flexCenter"
+        style={{
+          justifyContent: "space-between",
+          gap: "3rem",
+          marginTop: "3rem",
+          flexDirection: "row",
+        }}
+      >
+        {/* left side */}
         {/* inputs */}
-        <div className="flexColStart">
+        <div
+          className="flexColStart"
+          style={{
+            flex: 1,
+            gap: "1rem",
+          }}
+        >
           <Select
             w={"100%"}
             withAsterisk
@@ -39,22 +54,25 @@ const AddLocation = ({ propertyDetails, setPropertyDetails }) => {
           />
 
           <TextInput
-           w={"100%"}
-           withAsterisk
-           label="City"
-           {...form.getInputProps("city", { type: "input" })}
+            w={"100%"}
+            withAsterisk
+            label="City"
+            {...form.getInputProps("city", { type: "input" })}
           />
 
           <TextInput
-           w={"100%"}
-           withAsterisk
-           label="Address"
-           {...form.getInputProps("address", { type: "input" })}
+            w={"100%"}
+            withAsterisk
+            label="Address"
+            {...form.getInputProps("address", { type: "input" })}
           />
         </div>
-      </div>
 
-      {/* right side */}
+        {/* right side */}
+        <div style={{ flex: 1 }}>
+          <Map address={address} city={city} country={country} />
+        </div>
+      </div>
     </form>
   );
 };
