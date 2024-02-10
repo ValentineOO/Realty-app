@@ -32,5 +32,5 @@ export const updateFavorites = (id, favorites) => {
 };
 
 export const checkFavorites = (id, favorites) => {
-  return favorites.includes(id) ? "#fa3e5f" : "white";
+  return favorites?.includes(id) ? "#fa3e5f" : "white";
 };
