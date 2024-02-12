@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
 import { AiOutlineCloudUpload } from "react-icons/ai";
+import "./UploadImage.css"
 
 const UploadImage = ({
   propertyDetails,
