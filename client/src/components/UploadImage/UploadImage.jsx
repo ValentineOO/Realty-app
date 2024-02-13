@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import { Button, Group } from "@mantine/core";
 
 import { AiOutlineCloudUpload } from "react-icons/ai";
 import "./UploadImage.css";
@@ -12,6 +13,13 @@ const UploadImage = ({
   const [imageURL, setImageURL] = useState(propertyDetails.image);
   const cloudinaryRef = useRef();
   const widgetRef = useRef();
+  const handleNext = () => {
+    setPropertyDetails((prev) => ({
+      ...prev,
+      image: imageURL,
+    }));
+    nextStep();
+  };
 
   useEffect(() => {
     cloudinaryRef.current = window.cloudinary;
@@ -27,7 +35,7 @@ const UploadImage = ({
         }
       }
     );
-  });
+  }, []);
 
   return (
     <div className="flexColCenter uploadWrapper">
@@ -39,11 +47,23 @@ const UploadImage = ({
           <AiOutlineCloudUpload size={50} color="grey" />
         </div>
       ) : (
-        <div className="uploadedImage">
+        <div
+          className="uploadedImage"
+          onClick={() => widgetRef.current?.open()}
+        >
           <img src={imageURL} alt="" />
           <span>Upload Image</span>
         </div>
       )}
+
+      <Group position="center" mt={"xl"}>
+        <Button variant="default" onClick={prevStep}>
+          Previous
+        </Button>
+        <Button onClick={handleNext} disabled={!imageURL}>
+          Next
+        </Button>
+      </Group>
     </div>
   );
 };
