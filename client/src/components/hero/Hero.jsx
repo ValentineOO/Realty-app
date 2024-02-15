@@ -20,15 +20,17 @@ const Hero = () => {
               }}
             >
               Discover The
-               <br />
-             Most Suitable
-              <br /> 
+              <br />
+              Most Suitable
+              <br />
               Property For You
             </motion.h1>
           </div>
           <div className="flexColStart secondaryText flexhero-des">
             <span>Find a variety of properties that suit you easily</span>
-            <span>Forget all hassles in finding a residence of your choice</span>
+            <span>
+              Forget all hassles in finding a residence of your choice
+            </span>
           </div>
           <SearchBar />
 

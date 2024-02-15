@@ -27,7 +27,7 @@
 }
 .mode .button {
   width: 100%;
-  background: var(--lightBlue);
+  background: #e2e5e9;
   color: var(--blue);
   font-size: 0.9rem;
   font-weight: 600;
@@ -47,7 +47,7 @@
 }
 
 .mode .button:hover {
-  background: var(--blue-gradient);
+  background: var(--blue);
   color: white;
   scale: 0.8;
 }
