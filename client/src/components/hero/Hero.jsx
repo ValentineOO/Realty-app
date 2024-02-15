@@ -19,14 +19,16 @@ const Hero = () => {
                 type: "ease-in",
               }}
             >
-              Discover <br />
-              Most Suitable
-              <br /> Property
+              Discover The
+               <br />
+             Most Suitable
+              <br /> 
+              Property For You
             </motion.h1>
           </div>
           <div className="flexColStart secondaryText flexhero-des">
             <span>Find a variety of properties that suit you easily</span>
-            <span>Forget all difficulties in finding a residence for you</span>
+            <span>Forget all hassles in finding a residence of your choice</span>
           </div>
           <SearchBar />
 
